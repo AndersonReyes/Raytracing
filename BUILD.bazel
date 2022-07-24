@@ -1,0 +1,27 @@
+cc_library(
+    name = "core-lib",
+    srcs = glob(["RTOneWeekend/src/**/*.cc"]),
+    hdrs = glob(["RTOneWeekend/include/**/*.h"]),
+    copts = [
+        "-std=c++17"
+    ]
+)
+
+cc_binary(
+    name = "examples",
+    srcs = glob(["Examples/src/**/*.cc", "Examples/include/**/*.h"]),
+    copts = [
+        "-std=c++17"
+    ]
+)
+
+
+cc_test(
+    name = "lib-test",
+    size = "small",
+    srcs = glob(["RTOneWeekend/tests/**/*.cc"]),
+    deps = ["@com_google_googletest//:gtest_main", ":core-lib"],
+    copts = [
+        "-std=c++17", "-Wall", "-Werror"
+    ]
+)
