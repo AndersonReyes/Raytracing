@@ -1,18 +1,20 @@
 cc_library(
     name = "core-lib",
-    srcs = glob(["RTOneWeekend/src/**/*.cc"]),
+    srcs = glob(["RTOneWeekend/src/**/*.cc", "RTOneWeekend/include/**/*.h"]),
     hdrs = glob(["RTOneWeekend/include/**/*.h"]),
+    includes = ["RTOneWeekend/include", "RTOneWeekend"],
     copts = [
         "-std=c++17"
     ]
 )
 
 cc_binary(
-    name = "examples",
-    srcs = glob(["Examples/src/**/*.cc", "Examples/include/**/*.h"]),
+    name = "BasicColorImage",
+    srcs = glob(["RTOneWeekend/include/**/*.h", "Examples/image/**/*.cc", "Examples/image/**/*.h"]),
     copts = [
         "-std=c++17"
-    ]
+    ],
+    deps = ["core-lib"]
 )
 
 

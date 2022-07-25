@@ -1,6 +1,9 @@
 #ifndef VECTOR3_H
 #define VECTOR3_H
 
+#include <cassert>
+#include <cmath>
+
 namespace raytracer {
 class Vector3 {
  public:
@@ -81,9 +84,6 @@ class Vector3 {
  private:
   double elem[3];
 };
-
-using Point3 = Vector3;
-using Color = Vector3;
 
 inline Vector3 operator+(const Vector3& u, const Vector3& v) {
   return Vector3{u[0] + v[0], u[1] + v[1], u[2] + v[2]};
