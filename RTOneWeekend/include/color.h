@@ -9,11 +9,7 @@ namespace raytracer {
 
 using Color = Vector3;
 
-void WriteColor(std::ostream &out, Color color) {
-  out << static_cast<int>(255.999 * color.GetX()) << ' '
-      << static_cast<int>(255.999 * color.GetY()) << ' '
-      << static_cast<int>(255.999 * color.GetZ()) << '\n';
-}
+void WriteColor(std::ostream &out, Color color);
 }  // namespace raytracer
 
 #endif
