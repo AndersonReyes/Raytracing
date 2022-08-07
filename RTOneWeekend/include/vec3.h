@@ -7,12 +7,11 @@
 namespace raytracer {
 class Vector3 {
  public:
-  Vector3() : elem{0, 0, 0} {}
-  Vector3(double x, double y, double z) : elem{x, y, z} {}
+  Vector3();
+  Vector3(double x, double y, double z);
 
   const double GetX() const;
   const double GetY() const;
-
   const double GetZ() const;
 
   Vector3 operator-() const;
@@ -37,6 +36,7 @@ class Vector3 {
 Vector3 operator+(const Vector3& u, const Vector3& v);
 Vector3 operator-(const Vector3& u, const Vector3& v);
 Vector3 operator*(const Vector3& u, const Vector3& v);
+Vector3 operator*(double t, const Vector3& v);
 
 Vector3 operator/(const Vector3& u, const Vector3& v);
 

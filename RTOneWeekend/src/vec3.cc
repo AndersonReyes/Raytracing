@@ -1,6 +1,10 @@
 #include "vec3.h"
 
 namespace raytracer {
+
+Vector3::Vector3() : elem{0, 0, 0} {}
+Vector3::Vector3(double x, double y, double z) : elem{x, y, z} {}
+
 const double Vector3::GetX() const {
   return elem[0];
 }
@@ -82,6 +86,10 @@ Vector3 operator-(const Vector3& u, const Vector3& v) {
 
 Vector3 operator*(const Vector3& u, const Vector3& v) {
   return Vector3{u[0] * v[0], u[1] * v[1], u[2] * v[2]};
+}
+
+Vector3 operator*(double t, const Vector3& v) {
+  return Vector3{v[0] * t, v[1] * t, v[2] * t};
 }
 
 Vector3 operator/(const Vector3& u, const Vector3& v) {
