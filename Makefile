@@ -1,7 +1,9 @@
 .PHONY: test build
 
-test:
+cland: 
+	bazel run @hedron_compile_commands//:refresh_all
+test: cland
 	bazel test --test_output=all //:lib-test
 
-build-%:
+build-%: cland
 	bazel build //:${*}

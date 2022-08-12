@@ -5,6 +5,10 @@ namespace raytracer {
 Vector3::Vector3() : elem{0, 0, 0} {}
 Vector3::Vector3(double x, double y, double z) : elem{x, y, z} {}
 
+const Vector3 Vector3::Unit() const {
+  return (1.0 / Length()) * (*this);
+}
+
 const double Vector3::GetX() const {
   return elem[0];
 }

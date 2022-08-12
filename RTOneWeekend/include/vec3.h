@@ -25,6 +25,7 @@ class Vector3 {
   const double Length() const;
 
   const double LengthSquared() const;
+  const Vector3 Unit() const;
 
   static const double Dot(const Vector3& u, const Vector3& v);
   static const Vector3 Cross(const Vector3& u, const Vector3& v);
